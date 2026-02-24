@@ -62,7 +62,7 @@ export default function Home() {
               our videos, our users had 100k+ followers and generated
               millions of views. $1k MRR and then we sold it off (got bored).            </p>
           </div>
-
+ 
           <div>
             <a href="https://www.uwsummit.ca/" target="_blank" rel="noopener noreferrer" className="underline">UWSummit</a>
             <p className="leading-relaxed mb-20">My first viral project, Hot or Not for UWaterloo students
