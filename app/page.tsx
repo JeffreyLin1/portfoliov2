@@ -50,7 +50,7 @@ export default function Home() {
             <p className="leading-relaxed">Paper.io but you bet real money via Solana.
               Blew up within the crypto community, we had
               a lot of players wagering money in real time and we were handling a lot of money.
-              I launched a coin for it and it made me almost $1k
+              I launched a coin ($PLAYJELLO) for it and it made me almost $1k
               in fees.
             </p>
           </div>
