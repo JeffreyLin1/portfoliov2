@@ -58,7 +58,7 @@ export default function Home() {
           <div>
             <a href="https://brainrot.mov/" target="_blank" rel="noopener noreferrer" className="underline">Brainrot.mov</a>
             <p className="leading-relaxed">Website to generate reels/tiktoks of 
-              Peter Griffin explaining stuff to Stewey. You've probably seen 
+              Peter Griffin explaining stuff to Stewie. You've probably seen 
               our videos, our users had 100k+ followers and generated
               millions of views. $1k MRR and then we sold it off (got bored).            </p>
           </div>
