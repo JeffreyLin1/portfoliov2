@@ -55,12 +55,12 @@ How are people actually gonna make/lose money?
 
 I decided on this game flow (if you don't understand how Paper.io works already it'll be hard to understand this):
 
-1. Pick a wager: $1, $5, or $10.
-2. Enter queue. I stole this straight out of League of Legends. 
-3. Game starts when 6 players are queued. 60 second timer starts.
-4. All players wager amount is placed into a global pot. your % owned of the total player territory = your % of the pot.
-5. Killing players = you get their territory = you get their money.
-6. When the time is up, all players cash out based on territory owned. Last one standing = you get all the money in the pot.
+1. __Pick a wager__: $1, $5, or $10.
+2. __Enter queue__. I stole this straight out of League of Legends. 
+3. __Game starts__ when 6 players are queued. 60 second timer starts.
+4. __All players wager amount__ is placed into a global pot. your % owned of the total player territory = your % of the pot.
+5. __Killing players__ = you get their territory = you get their money.
+6. __When the time is up__, all players cash out based on territory owned. Last one standing = you get all the money in the pot.
 
 _Sounds simple enough, but honestly took a lot of iteration and thinking to get to these rules._
 
@@ -100,11 +100,11 @@ This honestly would've been easy if we just used 3d rendering, but I wanted it t
 
 The renderer basically just follows this procedure:
 
-1. Pixi Renderer creates layers (background, players, text)
-2. Clean player turn angles so edge cases like 179 to -179 doesn’t cause an entire spin.
-3. Pick a nearby angle step then reuse a cached cube drawing for that angle.
-4. Draw the cube by rotating corner points, then squashing them into the screen space. Only draw the faces that should be visible by computing the dot product of the normal and camera direction.
-5. Draw land shading w/ the same idea: if an edge faces the camera,
+1. __Pixi Renderer__ creates layers (background, players, text)
+2. __Clean player turn angles__ so edge cases like 179 to -179 doesn’t cause an entire spin.
+3. __Pick a nearby angle step__ then reuse a cached cube drawing for that angle.
+4. __Draw the cube__ by rotating corner points, then squashing them into the screen space. Only draw the faces that should be visible by computing the dot product of the normal and camera direction.
+5. __Draw land shading__ w/ the same idea: if an edge faces the camera,
 draw a side wall and tint it based on how much it faces us.
 
 To actually project 3d points onto a 2d canvas:
@@ -116,9 +116,9 @@ We can use a formula similar to this simplified version to draw it out.
 A problem I faced was laggy animations. The server sends locations, heading, etc. once every tick, then the renderer draws everything on screen. 
 
 This makes it look laggy because players are just sort of telporting to spots. To fix this, we use 'interpolation'. It can be boiled down to 2 simple concepts:
-1. Blend frames together with smooth animations. We compute
+1. __Blend frames together__ with smooth animations. We compute
   a blend value, then lerp positions.
-2. Predict next locations using a simple velocity direction formula
+2. __Predict next locations__ using a simple velocity direction formula
 
 The game renderer extremely simplified can be written as something like:
 ```ts
