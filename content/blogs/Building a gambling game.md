@@ -1,4 +1,4 @@
-# Experiences building a gambling game
+# Building a gambling game
 _March 6, 2026_
 
 ![Jello gameplay](/jello-2.jpg)
@@ -7,7 +7,7 @@ A few months ago, a friend and I built a Paper.io clone but players gamble
 real money and cash out based on performance. 
 
 I had a ton of fun and learned a lot
-building this out so I thought I'd talk walk through
+building this out so I thought I'd walk through
 my process in creating Jello.gg.
 
 
