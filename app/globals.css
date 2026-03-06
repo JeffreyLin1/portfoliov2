@@ -10,3 +10,44 @@ body {
   color: var(--foreground);
   font-family: "Open Sans", sans-serif;
 }
+
+/* Syntax highlighting colors for fenced markdown code blocks (rehype-highlight). */
+.hljs {
+  color: #24292f;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+  color: #8250df;
+}
+
+.hljs-string,
+.hljs-attr,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition {
+  color: #116329;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-link {
+  color: #953800;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  color: #6e7781;
+}
