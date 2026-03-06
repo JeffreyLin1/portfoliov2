@@ -14,16 +14,17 @@ my process in creating Jello.gg.
 
 ## Table of Contents
 - [Inspiration](#inspiration)
-- [The plan](#The-Plan)
-- [Building the UI](#Building-the-UI)
-    - [Pre-game screen](##pre-game-screen)
-    - [In-game screen](##in-game-screen)
-    - [Game renderer](##game-renderer)
+- [The plan](#the-plan)
+- [Building the UI](#building-the-ui)
+    - [Pre-game screen](#pre-game-screen)
+    - [In-game screen](#in-game-screen)
+    - [Game renderer](#game-renderer)
 - [Building the backend](#building-the-backend)
-    - [Control plane](##control-plane)
-    - [Game server](##game-server)
+    - [Control plane](#control-plane)
+    - [Game server](#game-server)
 - [Building the gambling](#building-the-gambling)
 - [Distribution](#distribution)
+- [Lessons learned](#lessons-learned)
 
 ## Inspiration
 Honestly, working at Shopify bored the hell out of me — I missed the adrenaline from 
@@ -256,4 +257,3 @@ Also the crypto community is scary AF.
 Anyways the game is still up (kinda dead tho) -> [jello.gg](https://jello.gg)
 
 Shoutout to [Kevin Wang](https://x.com/k3vinwvng) for building this w/ me!
-
