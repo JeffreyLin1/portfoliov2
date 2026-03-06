@@ -211,7 +211,7 @@ USDC on Solana was my chain of choice for this. I was already familiar with Sola
 All the work is basically handled with third party tools:
 
 - __Privy:__ Account creation, embedded wallets to each user so they can just deposit money into that wallet
-- __Helius:__ Interacting with the chain, getting wallet amounts, price conversions, etc.
+- __Helius:__ Interacting with the chain, getting wallet amounts, price conversions, payouts, withdrawls, etc.
 
 The server side payout system was basically just
 ```ts
@@ -223,7 +223,7 @@ The server side payout system was basically just
 _Yayy I don't have to touch the chain!_
 
 
-I really wanna express my gratitude to the team behind Privy, this project would not have been possible without their engineering. TYSM
+I really wanna express my gratitude to the team behind Privy and Helius, this project would not have been possible without their engineering. TYSM
 
 ## Distribution
 At first I was doing research, and I found similar games all had discord servers, giveaways, clipping programs, etc. 
