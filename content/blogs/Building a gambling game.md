@@ -159,7 +159,7 @@ _this was lowkey a whole week of work_
 
 Honestly, the backend was probably the easiest part of the stack. 
 
-The main idea is to have an authoritative server state that decides all game state so its fair to all players.
+The main idea is to have an authoritative server that decides all game state so its fair to all players.
 
 The backend can be split into 2 parts — the control plane, and the game server.
 
