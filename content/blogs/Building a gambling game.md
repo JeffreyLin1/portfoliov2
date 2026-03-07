@@ -50,6 +50,9 @@ I had a couple options:
 
 After consulting with my lawyers (Grok and ChatGPT), I concluded that we just won't take any profit and PRAY that I dont end up in prison. 
 
+![bruh](/nose2.png)
+_bruh_
+
 ### Gambling mechanisms
 How are people actually gonna make/lose money?
 
@@ -71,7 +74,8 @@ Node + Express for backend, game connected via ECS Fargate and queuing built wit
 
 Solana + Helius + Privy for web3.
 
-Written all in typescript.
+Written all in typescript. The only reason I did everything on AWS was because 
+I had $25k in credits from YC AI startup school. 
 
 ## Building the UI
 
@@ -226,7 +230,7 @@ _Yayy I don't have to touch the chain!_
 I really wanna express my gratitude to the team behind Privy and Helius, this project would not have been possible without their engineering. TYSM
 
 ## Distribution
-At first I was doing research, and I found similar games all had discord servers, giveaways, clipping programs, etc. 
+At first I was doing research and I found similar games all had discord servers, giveaways, clipping programs, etc. 
 
 At this point, I didn't wanna do allat. 
 
@@ -249,11 +253,13 @@ People were really nice and genuinely trying to help me out, and I feel bad that
 
 ## Lessons learned
 
-I was really overthinking the legality aspect of it. In reality it's not that deep unless I made like a million dollars or something. 
+I was really overthinking the legality aspect of this project. In reality it's not that deep unless I made like a million dollars or something. 
 
-At first I thought the most fun part of the project would be distribution, but the engineering ended up being the most fun part. Learning about websockets, security, and web3 architecture was really thrilling.
+At first I thought the most fun part of the project would be distribution, but the engineering ended up being the most fun part. Learning about websockets, security, and web3 architecture was really thrilling. I spent way too much time thinking about X marketing, youtube shorts clipping, etc.
 
 Also the crypto community is scary AF.
+
 Anyways the game is still up (kinda dead tho) -> [jello.gg](https://jello.gg)
 
 Shoutout to [Kevin Wang](https://x.com/k3vinwvng) for building this w/ me!
+![working](/working2.png)
