@@ -61,20 +61,20 @@ export default async function BlogPostPage({
   }
 
   return (
-    <div className="min-h-screen flex justify-center bg-white">
+    <div className="min-h-screen flex justify-center">
       <main className="flex min-h-screen w-full max-w-2xl flex-col px-6 pt-24 pb-8">
-        <Link href="/" className="text-sm underline">
+        <Link href="/" className="text-sm text-[var(--foreground-muted)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">
           ← back
         </Link>
-        <article className="text-lg leading-relaxed">
+        <article className="text-lg leading-relaxed text-[var(--foreground)]">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeSlug, rehypeHighlight]}
             components={{
-              a: ({ ...props }) => <a {...props} className="underline" />,
-              h1: ({ ...props }) => <h1 {...props} className="mt-6 text-4xl font-bold" />,
-              h2: ({ ...props }) => <h2 {...props} className="mt-5 text-3xl font-bold" />,
-              h3: ({ ...props }) => <h3 {...props} className="mt-4 text-2xl font-bold" />,
+              a: ({ ...props }) => <a {...props} className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors" />,
+              h1: ({ ...props }) => <h1 {...props} className="mt-6 text-4xl font-semibold text-[var(--foreground-strong)]" />,
+              h2: ({ ...props }) => <h2 {...props} className="mt-5 text-3xl font-semibold text-[var(--foreground-strong)]" />,
+              h3: ({ ...props }) => <h3 {...props} className="mt-4 text-2xl font-semibold text-[var(--foreground-strong)]" />,
               p: ({ ...props }) => <p {...props} className="mt-3" />,
               ul: ({ ...props }) => (
                 <ul {...props} className="mt-3 list-disc pl-5 [&_ul]:mt-1 [&_ol]:mt-1" />
@@ -99,7 +99,7 @@ export default async function BlogPostPage({
                 />
               ),
               blockquote: ({ ...props }) => (
-                <blockquote {...props} className="mt-3 border-l-2 border-black pl-3" />
+                <blockquote {...props} className="mt-3 border-l-2 border-gray-300 pl-3 text-[var(--foreground-muted)]" />
               ),
             }}
           >

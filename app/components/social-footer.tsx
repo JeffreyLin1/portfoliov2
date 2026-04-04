@@ -10,7 +10,7 @@ export default function SocialFooter({ className = "" }: SocialFooterProps) {
   ];
 
   return (
-    <footer className={`pt-12 text-sm ${className}`.trim()}>
+    <footer className={`pt-12 text-sm text-[var(--foreground-muted)] ${className}`.trim()}>
       <div className="flex gap-4">
         {links.map((link) => (
           <a
@@ -18,7 +18,7 @@ export default function SocialFooter({ className = "" }: SocialFooterProps) {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors"
           >
             {link.label}
           </a>

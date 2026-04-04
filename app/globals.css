@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #fafafa;
+  --foreground: #374151;
+  --foreground-strong: #111827;
+  --foreground-muted: #363e48;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Syntax highlighting colors for fenced markdown code blocks (rehype-highlight). */
