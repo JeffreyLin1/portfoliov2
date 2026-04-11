@@ -96,7 +96,7 @@ export default async function Home() {
 
           <div>
             <a href="https://brainrot.mov/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Brainrot.mov</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">First profitable project. Generate videos of Peter Griffin explaining stuff to Stewie. Millions of views, $1k MRR, sold it.</p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">First profitable project. Generate AI videos of Peter Griffin explaining stuff to Stewie. Millions of views, $1k MRR, sold it.</p>
           </div>
 
           <div>
