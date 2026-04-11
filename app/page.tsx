@@ -1,5 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import Image from "next/image";
 import Link from "next/link";
 import SocialFooter from "./components/social-footer";
 
@@ -51,37 +52,38 @@ export default async function Home() {
   return (
     <div className="min-h-screen flex justify-center">
       <main className="flex min-h-screen w-full max-w-2xl flex-col px-6 pt-24 pb-8">
-        <h1 className="text-3xl font-semibold text-[var(--foreground-strong)]">Hi! I&apos;m Jeffrey.</h1>
-        <div className="mt-3 flex gap-4 text-sm text-[var(--foreground-muted)]">
-          <a href="https://x.com/jeeffreyLin" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors">x</a>
-          <a href="https://ca.linkedin.com/in/jeffreyllin" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors">linkedin</a>
-          <a href="https://github.com/JeffreyLin1" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors">github</a>
-        </div>
+        <div className="relative">
+          <div>
 
-        <p className="mt-5 leading-relaxed">
-          2nd year SYDE @ UWaterloo.
-        </p>
+            <h1 className="text-3xl font-semibold text-[var(--foreground-strong)]">Jeffrey Lin</h1>
+            <div className="mt-3 flex gap-4 text-sm text-[var(--foreground-muted)]">
+              <a href="https://x.com/jeeffreyLin" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors">x</a>
+              <a href="https://ca.linkedin.com/in/jeffreyllin" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors">linkedin</a>
+              <a href="https://github.com/JeffreyLin1" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors">github</a>
+            </div>
+            <p className="mt-5 leading-relaxed">
+             Currently studying SYDE @ UWaterloo. 
+            </p>
+          </div>
+          
+        </div>
         <h2 className="text-lg font-semibold text-[var(--foreground-strong)] mt-8">Work</h2>
 
         <div className="mt-3 space-y-5">
           <div>
             <a href="https://www.fleetline.ai/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Fleetline (current)</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Optimization algorithms for trucking.
-              Backed by YC (S25), Bloomberg Beta, BoxGroup, and more.</p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Engineer #2. Optimization algorithms for trucking, YC (S25).</p>
           </div>
 
           <div>
             <a href="https://www.shopify.com" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Shopify (2025)</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Worked on Sidekick.
-              I made a synthetic feedback loop for models to learn from mistakes,
-              finetuning w/ auto generated data targetted at prod errors.
-            </p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Worked on Sidekick. Built a synthetic feedback loop to finetune models on prod errors.</p>
           </div>
 
           <div>
             <a href="https://ca.linkedin.com/company/agentnoon" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Agentnoon (2025)</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">I worked on enterprise workforce planning software.
-              Backed by YC (W22) and got acquired by DayForce.</p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Enterprise workforce planning software,
+              YC (W22) and acquired by DayForce.</p>
           </div>
         </div>
         <h2 className="text-lg font-semibold text-[var(--foreground-strong)] mt-10">Projects</h2>
@@ -89,25 +91,17 @@ export default async function Home() {
         <div className="mt-3 space-y-5">
           <div>
             <a href="https://jello.gg/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Jello.gg</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Paper.io but you bet real money via Solana.
-              At it's peak we were handling money in the thousands.
-              I launched a coin ($PLAYJELLO) for it and it made me almost $1k
-              in fees.
-            </p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Paper.io but you bet real money via Solana. Launched $PLAYJELLO on Bags, made almost $1k in fees.</p>
           </div>
 
           <div>
             <a href="https://brainrot.mov/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Brainrot.mov</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">First profitable project, a website to generate videos of
-              Peter Griffin explaining stuff to Stewie. Our users had 100k+ followers and generated
-              millions of views. We hit $1k MRR and then sold it.</p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">First profitable project. Generate videos of Peter Griffin explaining stuff to Stewie. Millions of views, $1k MRR, sold it.</p>
           </div>
 
           <div>
             <a href="https://www.uwsummit.ca/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">UWSummit</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">My first viral project, Hot or Not for UWaterloo students
-              but instead of looks its their linkedin, &quot;Who&apos;s more cracked&quot;. 100k visits, 3 days, sold it to Clado (YC X25).
-            </p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">First viral project. Hot or Not but for UWaterloo linkedin profiles. 100k visits in 3 days, sold it to Clado (YC X25).</p>
           </div>
         </div>
         <h2 className="text-lg font-semibold text-[var(--foreground-strong)] mt-10">Writing</h2>
