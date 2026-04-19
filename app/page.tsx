@@ -83,7 +83,7 @@ export default async function Home() {
 
           <div>
             <a href="https://ca.linkedin.com/company/agentnoon" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Agentnoon (2025)</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Enginereing intern - Enterprise workforce planning software. I built efficient tree traversal algorithms to handle gargantuan sizes of hierarchical data.
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Engineering intern - Enterprise workforce planning software. I built efficient tree traversal algorithms to handle gargantuan sizes of hierarchical data.
               YC W22.</p>
           </div>
         </div>
