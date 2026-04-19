@@ -63,7 +63,6 @@ export default async function Home() {
             <p className="mt-5 leading-relaxed">
              I'm currently in my second year studying Systems Design Engineering at UWaterloo. 
              With how easy it is to code with AI, I've been especially interested in optimizations and performance in full stack software. 
-             I love challenges and forcing myself into weird situations, like spending 30 days biking across the rockies or building an online gambling game.
             </p>
           </div>
           
