@@ -101,7 +101,7 @@ export default async function Home() {
           </div>
 
           <div>
-            <a href="https://www.uwsummit.ca/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">UWSummit</a>
+            <a href="https://uwsummit-git-main-jeffreylin1s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">UWSummit</a>
             <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">First viral project. Hot or Not but for UWaterloo linkedin profiles. It got 100k visits in 3 days then we sold it to Clado (YC X25) because we kept getting botted.</p>
           </div>
         </div>
