@@ -62,7 +62,7 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen flex justify-center">
-      <main className="flex min-h-screen w-full max-w-2xl flex-col px-6 pt-24 pb-8">
+      <main className="flex min-h-screen w-full max-w-2xl flex-col px-6 pt-8 pb-8">
         <Link href="/" className="text-sm text-[var(--foreground-muted)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">
           ← back
         </Link>
