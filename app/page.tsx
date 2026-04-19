@@ -62,7 +62,7 @@ export default async function Home() {
             </div>
             <p className="mt-5 leading-relaxed">
              I'm in my second year studying Systems Design Engineering at UWaterloo. I like writing performant and optimized software. 
-             I'm also good at dealing with large and messy datasets as an outcome of my internship experience. Currently, I'm trying to learn more about 
+             Currently, I'm trying to learn more about 
              cloud infrastructure.
             </p>
           </div>
