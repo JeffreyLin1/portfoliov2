@@ -61,7 +61,9 @@ export default async function Home() {
               <a href="https://github.com/JeffreyLin1" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors">github</a>
             </div>
             <p className="mt-5 leading-relaxed">
-             I'm in my second year studying Systems Design Engineering at UWaterloo. I like writing performant and optimized software.
+             I'm in my second year studying Systems Design Engineering at UWaterloo. I like writing performant and optimized software. 
+             I'm also good at dealing with large and messy datasets - against my own will. Currently, I'm trying to learn more about 
+             cloud infrastructure.
             </p>
           </div>
           
