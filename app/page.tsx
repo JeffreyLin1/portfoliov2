@@ -61,7 +61,7 @@ export default async function Home() {
               <a href="https://github.com/JeffreyLin1" target="_blank" rel="noopener noreferrer" className="underline decoration-gray-300 hover:decoration-gray-500 transition-colors">github</a>
             </div>
             <p className="mt-5 leading-relaxed">
-             I'm currently in my second year studying Systems Design Engineering at UWaterloo. I've been coding since I was 8, starting with HTML and games in Turing.
+             I'm currently in my second year studying Systems Design Engineering at UWaterloo. I started coding when I was 8, tinkering with games in Turing. Now, I like to obsess over building performant full stack software.
              I love challenges and forcing myself into weird situations, like spending 30 days biking across the rockies or building an online gambling game.
             <br></br><br></br>I live to be free and to help others. 
             </p>
