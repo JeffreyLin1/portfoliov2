@@ -92,7 +92,7 @@ export default async function Home() {
         <div className="mt-3 space-y-3">
           <div>
             <a href="https://jello.gg/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Jello.gg</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Paper.io but you bet real money via Solana. We had 100+ concurrent players at it's peak. I launched $PLAYJELLO on Bags and made almost $1k in fees.</p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">Paper.io but you bet real money via Solana. At our peak we had 100+ concurrent players. I launched $PLAYJELLO on Bags and made almost $1k in fees.</p>
           </div>
 
           <div>
