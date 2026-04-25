@@ -71,7 +71,7 @@ export default async function Home() {
         <div className="mt-3 space-y-3">
           <div>
             <a href="https://www.fleetline.ai/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--foreground-strong)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors">Fleetline (current)</a>
-            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">2nd Engineering hire - Optimization algorithms for trucking. YC S25.</p>
+            <p className="mt-1 text-[var(--foreground-muted)] leading-relaxed">3rd Engineering hire - Optimization algorithms for trucking. YC S25.</p>
           </div>
 
           <div>
