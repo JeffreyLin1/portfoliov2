@@ -25,7 +25,7 @@ export default function Nav() {
             href={link.href}
             className={
               isActive
-                ? "font-semibold text-[var(--foreground-strong)]"
+                ? "text-[var(--link)]"
                 : "text-[var(--foreground-muted)] hover:text-[var(--foreground-strong)] transition-colors"
             }
           >

@@ -5,6 +5,8 @@
   --foreground: #374151;
   --foreground-strong: #111827;
   --foreground-muted: #363e48;
+  --link: #6b6536;
+  --link-hover: #4d4825;
 }
 
 html {
