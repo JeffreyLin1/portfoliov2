@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type HalftoneVideoProps = {
   src: string;
@@ -109,6 +109,7 @@ export default function HalftoneVideo({
 }: HalftoneVideoProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -181,15 +182,16 @@ export default function HalftoneVideo({
     const render = () => {
       if (cancelled) return;
       resize();
-      if (video.readyState >= 2 && !video.paused) {
+      gl.clearColor(0, 0, 0, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      if (video.readyState >= 2) {
         gl.activeTexture(gl.TEXTURE0);
         gl.bindTexture(gl.TEXTURE_2D, texture);
         gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 0);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        if (!ready) setReady(true);
       }
-      gl.clearColor(0, 0, 0, 0);
-      gl.clear(gl.COLOR_BUFFER_BIT);
-      gl.drawArrays(gl.TRIANGLES, 0, 6);
       rafId = requestAnimationFrame(render);
     };
 
@@ -224,7 +226,10 @@ export default function HalftoneVideo({
         crossOrigin="anonymous"
         className="absolute inset-0 h-full w-full opacity-0 pointer-events-none"
       />
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+      <canvas
+        ref={canvasRef}
+        className={`absolute inset-0 h-full w-full transition-opacity duration-700 ease-out ${ready ? "opacity-100" : "opacity-0"}`}
+      />
     </div>
   );
 }
