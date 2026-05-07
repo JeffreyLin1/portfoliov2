@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import Nav from "./components/nav";
+import Footer from "./components/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,16 +16,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>
-          {children}
-          <Analytics />
-        </body>
+        <div className="min-h-screen flex justify-center">
+          <div className="flex min-h-screen w-full max-w-xl flex-col px-6 pt-8 pb-8">
+            <Nav />
+            <main className="mt-4">{children}</main>
+            <Footer />
+          </div>
+        </div>
+        <Analytics />
+      </body>
     </html>
   );
 }
