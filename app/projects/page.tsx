@@ -52,7 +52,7 @@ export default function ProjectsPage() {
                 alt={item.name}
                 fill
                 sizes="(max-width: 768px) 50vw, 300px"
-                className="object-cover"
+                className="object-cover scale-105 transition-transform duration-500 ease-out group-hover:scale-100"
               />
             </div>
             <div className="px-4 pb-4">
@@ -97,6 +97,9 @@ export default function ProjectsPage() {
           </a>
         ))}
       </div>
+      <p className="mt-4 text-sm text-[var(--foreground-muted)]">
+        Check out my <a href="https://github.com/JeffreyLin1" target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--link)] underline decoration-[var(--link)]/40 hover:text-[var(--link-hover)] hover:decoration-[var(--link-hover)] transition-colors">github</a> for more.
+      </p>
     </div>
   );
 }
