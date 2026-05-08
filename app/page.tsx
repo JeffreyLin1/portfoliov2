@@ -9,7 +9,7 @@ export default function Home() {
         <HalftoneVideo src="/white.mp4" />
       </div>
       <p className="mt-5 leading-relaxed">
-        I study Systems Design Engineering at the University of Waterloo. Currently, I'm an engineer at <a href="https://www.fleetline.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--link)] underline decoration-[var(--link)]/40 hover:text-[var(--link-hover)] hover:decoration-[var(--link-hover)] transition-colors">Fleetline</a> (YC S25)
+        I study Systems Design Engineering at the University of Waterloo. Currently, I'm a founding engineer at <a href="https://www.fleetline.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--link)] underline decoration-[var(--link)]/40 hover:text-[var(--link-hover)] hover:decoration-[var(--link-hover)] transition-colors">Fleetline</a> (YC S25)
         building optimization algorithms for trucking routes.
       </p>
       <p className="mt-3 leading-relaxed">
