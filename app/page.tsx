@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <h1 className="text-3xl font-semibold text-[var(--foreground-strong)]">Jeffrey Lin</h1>
       <div className="pt-4">
-        <HalftoneVideo src="/white.mp4" />
+        <HalftoneVideo src="/white.mp4" srcDark="/jellyfish.mp4" gridSizeDark={8} dotRadiusDark={7} />
       </div>
       <p className="mt-5 leading-relaxed">
         I study Systems Design Engineering at the University of Waterloo. Currently, I'm a founding engineer at <a href="https://www.fleetline.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--link)] underline decoration-[var(--link)]/40 hover:text-[var(--link-hover)] hover:decoration-[var(--link-hover)] transition-colors">Fleetline</a> (YC S25)

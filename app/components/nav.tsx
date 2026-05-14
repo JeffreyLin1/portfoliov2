@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./theme-toggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -14,7 +15,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-6 text-base">
+    <nav className="flex items-center gap-6 text-base">
       {links.map((link) => {
         const isActive =
           link.href === "/"
@@ -34,6 +35,9 @@ export default function Nav() {
           </Link>
         );
       })}
+      <div className="ml-auto">
+        <ThemeToggle />
+      </div>
     </nav>
   );
 }

@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #374151;
   --foreground-strong: #111827;
@@ -9,11 +12,21 @@
   --link-hover: #4d4825;
 }
 
+.dark {
+  color-scheme: dark;
+  --background: #060606;
+  --foreground: #c7d2dc;
+  --foreground-strong: #f3f4f6;
+  --foreground-muted: #9aa4b2;
+  --link: #93c5fd;
+  --link-hover: #dbeafe;
+}
+
 html {
   font-size: 17px;
 }
 
-body {
+html, body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Times New Roman", Times, serif;

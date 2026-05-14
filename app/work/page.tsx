@@ -40,9 +40,9 @@ export default function WorkPage() {
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="group flex flex-col border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
           >
-            <div className="relative aspect-video w-full overflow-hidden bg-gray-100">
+            <div className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
               <Image
                 src={item.image}
                 alt={item.name}

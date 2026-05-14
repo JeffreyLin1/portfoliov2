@@ -44,9 +44,9 @@ export default function ProjectsPage() {
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="group flex flex-col border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
           >
-            <div className="relative aspect-video w-full overflow-hidden bg-gray-100">
+            <div className="relative aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
               <Image
                 src={item.image}
                 alt={item.name}
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-1.5 py-0.5 bg-gray-100 text-[var(--foreground-muted)] rounded"
+                        className="text-xs px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-[var(--foreground-muted)] rounded"
                       >
                         {tag}
                       </span>

@@ -4,9 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 type HalftoneVideoProps = {
   src: string;
+  srcDark?: string;
   className?: string;
   gridSize?: number;
   dotRadius?: number;
+  gridSizeDark?: number;
+  dotRadiusDark?: number;
   saturation?: number;
   contrast?: number;
   cropTop?: number;
@@ -97,9 +100,12 @@ function compileShader(gl: WebGLRenderingContext, type: number, source: string):
 
 export default function HalftoneVideo({
   src,
+  srcDark,
   className = "",
   gridSize = 13,
   dotRadius = 11.5,
+  gridSizeDark,
+  dotRadiusDark,
   saturation = 1.3,
   contrast = 1,
   cropTop = 0,
@@ -110,6 +116,84 @@ export default function HalftoneVideo({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [ready, setReady] = useState(false);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    const sync = () => setIsDark(html.classList.contains("dark"));
+    sync();
+    const observer = new MutationObserver(sync);
+    observer.observe(html, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+
+  const targetSrc = isDark && srcDark ? srcDark : src;
+  const [activeSrc, setActiveSrc] = useState(targetSrc);
+  const activeGridSize = isDark && gridSizeDark != null ? gridSizeDark : gridSize;
+  const activeDotRadius = isDark && dotRadiusDark != null ? dotRadiusDark : dotRadius;
+
+  useEffect(() => {
+    if (targetSrc === activeSrc) return;
+    setTransitionEnabled(false);
+    setReady(false);
+    setActiveSrc(targetSrc);
+  }, [targetSrc, activeSrc]);
+
+  const paramsRef = useRef({
+    gridSize: activeGridSize,
+    dotRadius: activeDotRadius,
+    saturation,
+    contrast,
+    cropTop,
+    cropRight,
+    cropBottom,
+    cropLeft,
+  });
+  paramsRef.current = {
+    gridSize: activeGridSize,
+    dotRadius: activeDotRadius,
+    saturation,
+    contrast,
+    cropTop,
+    cropRight,
+    cropBottom,
+    cropLeft,
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    setReady(false);
+    let restartTimer: ReturnType<typeof setTimeout> | null = null;
+    const onLoaded = () => {
+      requestAnimationFrame(() => {
+        setTransitionEnabled(true);
+        requestAnimationFrame(() => setReady(true));
+      });
+    };
+    const onEnded = () => {
+      setReady(false);
+      restartTimer = setTimeout(() => {
+        video.currentTime = 0;
+        const pp = video.play();
+        if (pp) pp.catch(() => {});
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => setReady(true)),
+        );
+      }, 700);
+    };
+    video.addEventListener("loadeddata", onLoaded);
+    video.addEventListener("ended", onEnded);
+    video.load();
+    const p = video.play();
+    if (p) p.catch(() => {});
+    return () => {
+      video.removeEventListener("loadeddata", onLoaded);
+      video.removeEventListener("ended", onEnded);
+      if (restartTimer) clearTimeout(restartTimer);
+    };
+  }, [activeSrc]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -172,11 +256,12 @@ export default function HalftoneVideo({
       }
       gl.viewport(0, 0, canvas.width, canvas.height);
       gl.uniform2f(u_resolution, canvas.width, canvas.height);
-      gl.uniform1f(u_gridSize, gridSize);
-      gl.uniform1f(u_dotRadius, dotRadius);
-      gl.uniform1f(u_saturation, saturation);
-      gl.uniform1f(u_contrast, contrast);
-      gl.uniform4f(u_crop, cropTop, cropRight, cropBottom, cropLeft);
+      const p = paramsRef.current;
+      gl.uniform1f(u_gridSize, p.gridSize);
+      gl.uniform1f(u_dotRadius, p.dotRadius);
+      gl.uniform1f(u_saturation, p.saturation);
+      gl.uniform1f(u_contrast, p.contrast);
+      gl.uniform4f(u_crop, p.cropTop, p.cropRight, p.cropBottom, p.cropLeft);
     };
 
     const render = () => {
@@ -190,7 +275,6 @@ export default function HalftoneVideo({
         gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 0);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
-        if (!ready) setReady(true);
       }
       rafId = requestAnimationFrame(render);
     };
@@ -212,23 +296,22 @@ export default function HalftoneVideo({
       gl.deleteShader(vs);
       gl.deleteShader(fs);
     };
-  }, [gridSize, dotRadius, saturation, contrast, cropTop, cropRight, cropBottom, cropLeft]);
+  }, []);
 
   return (
     <div className={`relative aspect-video w-full ${className}`}>
       <video
         ref={videoRef}
-        src={src}
+        src={activeSrc}
         autoPlay
         muted
-        loop
         playsInline
         crossOrigin="anonymous"
         className="absolute inset-0 h-full w-full opacity-0 pointer-events-none"
       />
       <canvas
         ref={canvasRef}
-        className={`absolute inset-0 h-full w-full transition-opacity duration-700 ease-out ${ready ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-full w-full ${transitionEnabled ? "transition-opacity duration-700 ease-out" : ""} ${ready ? "opacity-100" : "opacity-0"}`}
       />
     </div>
   );
