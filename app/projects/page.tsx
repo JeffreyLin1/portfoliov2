@@ -21,7 +21,7 @@ const projects = [
     date: "2025",
     tags: ["AI", "AWS", "SaaS", "Real revenue", "Real users", "Acquired"],
     description:
-      "First profitable project. At the time we sold the website, we were making around $1k MRR. Our app uses AI to generate short form content, like Peter Griffin talking to Stewie. Plently of our users gathered millions of views using brainrot.",
+      "First profitable project. At the time we sold the website, we were making around $1k MRR. Our app uses AI to generate short form content, like Peter Griffin talking to Stewie. Plently of our users gathered millions of views using brainrot",
   },
   {
     href: "https://uwsummit-git-main-jeffreylin1s-projects.vercel.app/",
