@@ -38,7 +38,7 @@ export default function ProjectsPage() {
   return (
     <div>
       <div className="mt-3 grid grid-cols-1 gap-4">
-        {projects.map((item) => (
+        {projects.map((item, idx) => (
           <a
             key={item.name}
             href={item.href}
@@ -51,7 +51,9 @@ export default function ProjectsPage() {
                 src={item.image}
                 alt={item.name}
                 fill
-                sizes="(max-width: 768px) 50vw, 300px"
+                sizes="(max-width: 768px) 100vw, 640px"
+                priority={idx === 0}
+                loading={idx === 0 ? "eager" : "lazy"}
                 className="object-cover scale-105 transition-transform duration-500 ease-out group-hover:scale-100"
               />
             </div>

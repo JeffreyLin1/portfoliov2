@@ -34,7 +34,7 @@ export default function WorkPage() {
   return (
     <div>
       <div className="mt-3 grid grid-cols-1 gap-4">
-        {work.map((item) => (
+        {work.map((item, idx) => (
           <a
             key={item.name}
             href={item.href}
@@ -47,7 +47,9 @@ export default function WorkPage() {
                 src={item.image}
                 alt={item.name}
                 fill
-                sizes="(max-width: 768px) 100vw, 600px"
+                sizes="(max-width: 768px) 100vw, 640px"
+                priority={idx === 0}
+                loading={idx === 0 ? "eager" : "lazy"}
                 className="object-cover scale-105 transition-transform duration-500 ease-out group-hover:scale-100"
               />
             </div>

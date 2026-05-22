@@ -306,6 +306,7 @@ export default function HalftoneVideo({
         autoPlay
         muted
         playsInline
+        preload="auto"
         crossOrigin="anonymous"
         className="absolute inset-0 h-full w-full opacity-0 pointer-events-none"
       />
