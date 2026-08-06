@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
+import LanguageProvider from "./components/language-provider";
+import { HTML_LANG } from "./lib/i18n";
+import { getLang } from "./lib/lang-server";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,13 +21,15 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const lang = await getLang();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={HTML_LANG[lang]} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -33,13 +38,15 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="min-h-screen flex justify-center">
-          <div className="flex min-h-screen w-full max-w-xl flex-col px-6 pt-8 pb-8">
-            <Nav />
-            <main className="mt-4">{children}</main>
-            <Footer />
+        <LanguageProvider initialLang={lang}>
+          <div className="min-h-screen flex justify-center">
+            <div className="flex min-h-screen w-full max-w-xl flex-col px-6 pt-8 pb-8">
+              <Nav />
+              <main className="mt-4">{children}</main>
+              <Footer />
+            </div>
           </div>
-        </div>
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

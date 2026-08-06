@@ -1,73 +1,14 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import { getBlogBySlug } from "../../lib/blogs";
+import BlogView from "./blog-view";
 
-type BlogFile = {
-  title: string;
-  content: string;
-};
-
-function toSlug(input: string): string {
-  return input
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
-}
-
-async function getBlogFileBySlug(slug: string): Promise<BlogFile | null> {
-  const blogsDir = path.join(process.cwd(), "content", "blogs");
-  try {
-    const entries = await fs.readdir(blogsDir, { withFileTypes: true });
-    const files = entries.filter((entry) => entry.isFile());
-
-    for (const file of files) {
-      const baseName = file.name.replace(/\.[^.]+$/, "");
-      if (toSlug(baseName) !== slug) {
-        continue;
-      }
-
-      const blogPath = path.join(blogsDir, file.name);
-      const content = await fs.readFile(blogPath, "utf8");
-      return {
-        title: baseName.replace(/[-_]+/g, " ").trim(),
-        content,
-      };
-    }
-  } catch {
-    return null;
-  }
-
-  return null;
-}
-
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const blogFile = await getBlogFileBySlug(slug);
-
-  if (!blogFile) {
-    notFound();
-  }
-
+function Article({ content }: { content: string }) {
   return (
-    <div>
-      <Link
-        href="/writing"
-        className="text-sm text-[var(--foreground-muted)] underline decoration-gray-300 hover:decoration-gray-500 transition-colors"
-      >
-        ← back
-      </Link>
-      <article className="mt-2 leading-relaxed text-[var(--foreground)]">
+    <article className="mt-2 leading-relaxed text-[var(--foreground)]">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeSlug, rehypeHighlight]}
@@ -104,9 +45,28 @@ export default async function BlogPostPage({
           ),
         }}
       >
-        {blogFile.content}
+        {content}
       </ReactMarkdown>
     </article>
-    </div>
+  );
+}
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const blogPost = await getBlogBySlug(slug);
+
+  if (!blogPost) {
+    notFound();
+  }
+
+  return (
+    <BlogView
+      en={<Article content={blogPost.content.en} />}
+      zh={<Article content={blogPost.content.zh} />}
+    />
   );
 }

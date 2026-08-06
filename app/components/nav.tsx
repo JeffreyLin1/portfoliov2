@@ -2,17 +2,20 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LanguageToggle from "./language-toggle";
+import { useLanguage } from "./language-provider";
 import ThemeToggle from "./theme-toggle";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/work", label: "Work" },
-  { href: "/writing", label: "Writing" },
-];
+  { href: "/", key: "home" },
+  { href: "/projects", key: "projects" },
+  { href: "/work", key: "work" },
+  { href: "/writing", key: "writing" },
+] as const;
 
 export default function Nav() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   return (
     <nav className="flex items-center gap-6 text-base">
@@ -31,11 +34,12 @@ export default function Nav() {
                 : "text-[var(--foreground-muted)] hover:text-[var(--foreground-strong)] transition-colors"
             }
           >
-            {link.label}
+            {t.nav[link.key]}
           </Link>
         );
       })}
-      <div className="ml-auto">
+      <div className="ml-auto flex items-center gap-3">
+        <LanguageToggle />
         <ThemeToggle />
       </div>
     </nav>

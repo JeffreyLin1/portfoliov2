@@ -29,7 +29,9 @@ html {
 html, body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Times New Roman", Times, serif;
+  /* Times has no CJK glyphs, so Chinese falls through to a matching serif. */
+  font-family: "Times New Roman", Times, "Songti SC", "SimSun", "Noto Serif SC",
+    "Source Han Serif SC", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
