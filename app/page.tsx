@@ -9,8 +9,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold text-[var(--foreground-strong)]">{t.home.name}</h1>
-      <div className="pt-4">
+      <div className="pt-1">
         <HalftoneVideo src="/white.mp4" srcDark="/jellyfish.mp4" gridSizeDark={8} dotRadiusDark={7} />
       </div>
       {t.home.intro.map((paragraph, idx) => (

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import Nav from "./components/nav";
+import Header from "./components/header";
 import Footer from "./components/footer";
 import LanguageProvider from "./components/language-provider";
 import { HTML_LANG } from "./lib/i18n";
@@ -41,7 +41,7 @@ export default async function RootLayout({
         <LanguageProvider initialLang={lang}>
           <div className="min-h-screen flex justify-center">
             <div className="flex min-h-screen w-full max-w-xl flex-col px-6 pt-8 pb-8">
-              <Nav />
+              <Header />
               <main className="mt-4">{children}</main>
               <Footer />
             </div>

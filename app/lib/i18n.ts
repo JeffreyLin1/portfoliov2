@@ -25,12 +25,6 @@ const agentnoon = "https://www.agentnoon.com";
 const github = "https://github.com/JeffreyLin1";
 
 const en = {
-  nav: {
-    home: "Home",
-    projects: "Projects",
-    work: "Work",
-    writing: "Writing",
-  },
   langToggle: {
     // Names the language you switch *to*.
     label: "中文",
@@ -87,12 +81,6 @@ const en = {
 
 /** Same shape as `en`, so a missing translation is a type error. */
 const zh: typeof en = {
-  nav: {
-    home: "首页",
-    projects: "项目",
-    work: "工作",
-    writing: "文章",
-  },
   langToggle: {
     label: "EN",
     ariaLabel: "Switch to English",
