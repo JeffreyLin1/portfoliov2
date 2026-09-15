@@ -102,8 +102,8 @@ export default function HalftoneVideo({
   src,
   srcDark,
   className = "",
-  gridSize = 13,
-  dotRadius = 11.5,
+  gridSize = 6.5,
+  dotRadius = 5.75,
   gridSizeDark,
   dotRadiusDark,
   saturation = 1.3,
@@ -256,9 +256,12 @@ export default function HalftoneVideo({
       }
       gl.viewport(0, 0, canvas.width, canvas.height);
       gl.uniform2f(u_resolution, canvas.width, canvas.height);
+      // gridSize/dotRadius props are in CSS pixels; the canvas backing store
+      // is DPR-scaled, so convert here to keep dots the same visual size on
+      // every display density.
       const p = paramsRef.current;
-      gl.uniform1f(u_gridSize, p.gridSize);
-      gl.uniform1f(u_dotRadius, p.dotRadius);
+      gl.uniform1f(u_gridSize, p.gridSize * dpr);
+      gl.uniform1f(u_dotRadius, p.dotRadius * dpr);
       gl.uniform1f(u_saturation, p.saturation);
       gl.uniform1f(u_contrast, p.contrast);
       gl.uniform4f(u_crop, p.cropTop, p.cropRight, p.cropBottom, p.cropLeft);

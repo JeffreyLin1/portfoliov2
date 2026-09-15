@@ -91,7 +91,7 @@ const zh: typeof en = {
     writing: "文章 — Jeffrey Lin",
   },
   home: {
-    name: "Jeffrey Lin",
+    name: "林辰妃",
     intro: [
       [
         { text: "我在滑铁卢大学攻读系统设计工程。我最近在 " },
