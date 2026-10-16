@@ -23,6 +23,7 @@ const brainrot = "https://brainrot.mov/";
 const shopify = "https://www.shopify.com";
 const agentnoon = "https://www.agentnoon.com";
 const github = "https://github.com/JeffreyLin1";
+const tesser = "https://tesser.sh/"
 
 const en = {
   langToggle: {
@@ -39,22 +40,26 @@ const en = {
     name: "Jeffrey Lin",
     intro: [
       [
+        { text: "I’m currently on leave from school to build " },
+        { text: "Tesser", href: tesser },
         {
-          text: "I study Systems Design Engineering at the University of Waterloo. I was most recently a founding engineer at ",
+          text: " (YC W27). Previously, I studied systems design engineering at the University of Waterloo and was an engineer at ",
         },
         { text: "Fleetline", href: fleetline },
-        { text: " (YC S25) building optimization algorithms for trucking routes." },
-      ],
-      [
-        { text: "Previously, I built and sold a " },
-        { text: "viral website", href: uwsummit },
-        { text: ", then I took " },
-        { text: "another one", href: brainrot },
-        { text: " to $1k in monthly revenue and sold that one too. I also interned at " },
+        { text: " (YC S25), " },
         { text: "Shopify", href: shopify },
-        { text: " and " },
+        { text: ", and " },
         { text: "Agentnoon", href: agentnoon },
         { text: " (YC W22)." },
+      ],
+      [
+        { text: "My first taste of software success was when I built and sold a " },
+        { text: "viral website", href: uwsummit },
+        { text: " then took " },
+        { text: "another one", href: brainrot },
+        {
+          text: " to $1k in monthly revenue and sold that one too.",
+        },
       ],
     ] as Part[][],
   },
@@ -94,20 +99,22 @@ const zh: typeof en = {
     name: "林辰妃",
     intro: [
       [
-        { text: "我在滑铁卢大学攻读系统设计工程。我最近在 " },
+        { text: "我是 " },
+        { text: "Tesser" },
+        { text: "（YC W27）的 CEO 兼联合创始人。此前，我在滑铁卢大学攻读系统设计工程，并在 " },
         { text: "Fleetline", href: fleetline },
-        { text: "（YC S25）担任创始工程师，为货运路线开发优化算法。" },
-      ],
-      [
-        { text: "在这之前，我做了一个 " },
-        { text: "爆火的网站", href: uwsummit },
-        { text: " 并把它卖掉了，之后又把 " },
-        { text: "另一个网站", href: brainrot },
-        { text: " 做到每月一千美元的收入，同样卖了出去。我还在 " },
+        { text: "（YC S25）、" },
         { text: "Shopify", href: shopify },
         { text: " 和 " },
         { text: "Agentnoon", href: agentnoon },
-        { text: "（YC W22）实习过。" },
+        { text: "（YC W22）做过工程。" },
+      ],
+      [
+        { text: "更早之前，我做了一个 " },
+        { text: "爆火的网站", href: uwsummit },
+        { text: " 并把它卖掉了，之后又把 " },
+        { text: "另一个网站", href: brainrot },
+        { text: " 做到每月一千美元的收入，同样卖了出去。这是我第一次在软件上尝到成功的滋味。" },
       ],
     ],
   },
