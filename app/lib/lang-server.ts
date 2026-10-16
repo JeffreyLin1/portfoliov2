@@ -1,12 +1,9 @@
-import { cookies } from "next/headers";
-import { DEFAULT_LANG, isLang, LANG_COOKIE, type Lang } from "./i18n";
+import { DEFAULT_LANG, type Lang } from "./i18n";
 
 /**
- * Language for the current request, from the cookie the toggle writes.
- * Reading it makes the page dynamic, which is what lets the server render
- * the right language on first paint instead of flashing English.
+ * Language for the current request. Pinned to English now that the toggle is
+ * gone, so an old `lang=zh` cookie can't strand a visitor in Chinese.
  */
 export async function getLang(): Promise<Lang> {
-  const value = (await cookies()).get(LANG_COOKIE)?.value;
-  return isLang(value) ? value : DEFAULT_LANG;
+  return DEFAULT_LANG;
 }
