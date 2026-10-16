@@ -1,0 +1,5 @@
+ports = [3000]
+
+[run]
+setup = "npm install --include=dev"
+dev   = "env NODE_ENV=development npm run dev"

@@ -6,7 +6,7 @@ const links = [
   { href: "https://x.com/jeeffreyLin", key: "x" },
   { href: "https://ca.linkedin.com/in/jeffreyllin", key: "linkedin" },
   { href: "https://github.com/JeffreyLin1", key: "github" },
-  { href: "mailto:j457lin@uwaterloo.ca", key: "email" },
+  { href: "mailto:jeffrey@tesser.sh", key: "email" },
 ] as const;
 
 export default function Footer() {
